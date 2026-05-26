@@ -2,27 +2,22 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#01000a">
-    
-    <meta property="og:title" content="إلى دنيتي رغد 💖">
-    <meta property="og:description" content="افتحي الرابط وشوفي قلبي وش مخبي لك.. ✨">
+    <meta property="og:title" content="عيدية دنيتي سوسو 💖">
+    <meta property="og:description" content="افتحي الرابط وشوفي عيديتك.. ✨">
     <meta property="og:type" content="website">
-
-    <title>إلى دنيتي رغد 💖</title>
+    <title>عيدية دنيتي سوسو 💖</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    
     <style>
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal',sans-serif; user-select:none; -webkit-tap-highlight-color:transparent; }
         
-        /* تم تغميق السماء قليلاً لبروز النجوم */
         body {
             background: linear-gradient(to bottom, #01000a, #13132b);
             height:100vh; overflow:hidden; display:flex; justify-content:center; align-items:center; color:white;
         }
 
-        /* نجوم محسّنة */
-        .stars { position:absolute; width:100%; height:100%; pointer-events:none; }
+        .stars { position:absolute; width:100%; height:100%; pointer-events:none; z-index: 0; }
         .star {
             position:absolute; background:white; border-radius:50%;
             animation: twinkle infinite alternate;
@@ -32,11 +27,9 @@
             100% { opacity:0.9; transform:scale(1.2); box-shadow:0 0 6px #fff; }
         }
 
-        /* القلوب */
         .heart {
             position:absolute; bottom:-50px; color:#ff6eb4;
-            animation: floatUp linear forwards;
-            opacity:0;
+            animation: floatUp linear forwards; opacity:0; z-index: 1;
         }
         @keyframes floatUp {
             0% { transform:translateY(0) scale(0.5); opacity:0; }
@@ -44,18 +37,17 @@
             100% { transform:translateY(-120vh) scale(1.2); opacity:0; }
         }
 
-        /* الحاوية */
         .container { z-index:5; width:90%; max-width:450px; text-align:center; transition:0.5s; }
 
-        /* زر الضغط المطول */
         .hold-btn-container {
             width:220px; height:60px; margin:20px auto;
             border-radius:30px; overflow:hidden; cursor:pointer;
             background:rgba(255,255,255,0.05); border:2px solid #ffb6c1;
             position:relative; transition:0.3s;
+            touch-action: none; 
+            -webkit-touch-callout: none;
         }
         .hold-btn-container:active { transform:scale(0.97); }
-        
         .hold-btn-fill {
             position:absolute; top:0; right:0; height:100%; width:0%;
             background:linear-gradient(45deg,#ff6eb4,#ffb6c1);
@@ -68,26 +60,19 @@
             text-shadow:0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* نص القصة */
         .story-text {
-            font-size:1.5rem; color:#ffb6c1;
-            line-height:1.8; min-height:120px; margin-bottom:30px;
-            text-shadow:0 0 10px rgba(255,182,193,0.3);
-            transition:opacity 0.5s;
+            font-size:1.5rem; color:#ffb6c1; line-height:1.8; min-height:120px; 
+            margin-bottom:30px; text-shadow:0 0 10px rgba(255,182,193,0.3); transition:opacity 0.5s;
         }
         .typing-cursor::after { content:"|"; animation:blink 1s infinite; }
         @keyframes blink { 50% { opacity:0; } }
 
-        /* زر عام + تأثير Ripple */
         .btn {
-            background:rgba(255,255,255,0.05);
-            border:1px solid #ffb6c1; color:white;
+            background:rgba(255,255,255,0.05); border:1px solid #ffb6c1; color:white;
             padding:12px 35px; border-radius:50px; font-size:1.2rem;
-            cursor:pointer; transition:0.25s; margin:10px;
-            position:relative; overflow:hidden;
+            cursor:pointer; transition:0.25s; margin:10px; position:relative; overflow:hidden;
         }
         .btn:active { transform:scale(0.95); }
-
         .btn:active::after {
             content:""; position:absolute; width:200px; height:200px;
             background:rgba(255,255,255,0.25); border-radius:50%;
@@ -96,12 +81,10 @@
         }
         @keyframes ripple { to { transform:translate(-50%,-50%) scale(2); opacity:0; } }
 
-        /* النهاية */
         .final-initials {
             font-size:4rem; color:#ff6eb4; letter-spacing:5px;
             text-transform:lowercase; margin-bottom:30px;
-            animation:slowPulse 3s infinite;
-            text-shadow:0 0 15px #ff6eb4;
+            animation:slowPulse 3s infinite; text-shadow:0 0 15px #ff6eb4;
         }
         @keyframes slowPulse {
             0%,100% { transform:scale(1); }
@@ -109,28 +92,23 @@
         }
 
         .countdown-box {
-            background:rgba(0,0,0,0.4); border-radius:15px;
-            padding:15px; margin-top:20px; border:1px solid rgba(255,255,255,0.15);
-            box-shadow:0 0 15px rgba(0,0,0,0.5);
+            background:rgba(0,0,0,0.4); border-radius:15px; padding:15px; margin-top:20px; 
+            border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 15px rgba(0,0,0,0.5);
         }
         .cd-title { color:#ffb6c1; font-size:1rem; margin-bottom:10px; }
         .cd-timer { font-size:1.4rem; font-weight:bold; letter-spacing: 1px; }
 
         .reason-box {
-            margin-top:20px; min-height:80px;
-            color:#fff9c4; font-size:1.2rem; font-style:italic;
-            opacity:0; transition:0.5s; text-shadow:0 0 8px #ffeb3b;
+            margin-top:20px; min-height:80px; color:#fff9c4; font-size:1.2rem; 
+            font-style:italic; opacity:0; transition:0.5s; text-shadow:0 0 8px #ffeb3b;
         }
-
         .insta-btn { border-color:#e1306c; color:#ffb6c1; }
-
-        .hidden { display:none; }
+        .hidden { display:none !important; }
     </style>
 </head>
-
 <body>
 
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop preload="auto">
         <source src="blue.mp3" type="audio/mpeg">
     </audio>
 
@@ -138,218 +116,217 @@
     <div id="heartsArea"></div>
 
     <div class="container">
-
+        <!-- Intro Screen -->
         <div id="introScreen">
-            <div style="font-size:60px;">🌌</div>
-            <h2 style="color:#ffb6c1; margin:20px 0;">جاهزة يا عسولتي؟</h2>
-
-            <div class="hold-btn-container" id="holdBtn">
+            <div style="font-size:60px;">🌙</div>
+            <h2 style="color:#ffb6c1; margin:20px 0;">جاهزة لعيديتك يا سوسو؟</h2>
+            <div class="hold-btn-container" id="holdBtn" oncontextmenu="return false;">
                 <div class="hold-btn-fill" id="btnFill"></div>
-                <div class="hold-btn-text">اضغطي مطولاً لفتح قلبي</div>
+                <div class="hold-btn-text">اضغطي مطولاً لفتح هديتك</div>
             </div>
             <p style="color:#aaa; font-size:0.9rem;">(استمري ٣ ثواني)</p>
         </div>
 
+        <!-- Story Screen -->
         <div id="storyScreen" class="hidden">
             <div id="storyText" class="story-text typing-cursor"></div>
             <div id="buttonsArea"></div>
         </div>
 
+        <!-- Finale Screen -->
         <div id="finaleScreen" class="hidden">
-            <div class="final-initials">A & R</div>
-
-            <button class="btn" id="reasonBtn" onclick="generateReason()">ليش أحبك؟ 🤍</button>
+            <div class="final-initials">H & S</div>
+            <button class="btn" id="reasonBtn" onclick="generateReason()">ليش أنتي عيدي؟ 🤍</button>
             <div class="reason-box" id="reasonText"></div>
-
             <div class="countdown-box">
-                <div class="cd-title">بانتظار اليوم المنتظر (23 أغسطس):</div>
-                <div class="cd-timer" id="timer"></div>
+                <!-- تم التعديل ليتناسب مع فرحة العيد -->
+                <div class="cd-title">بانتظار فرحتنا الكبيرة اللي بتكمل أعيادنا (1 أكتوبر):</div>
+                <div class="cd-timer" id="timer">يتم الحساب...</div>
             </div>
-
-            <a href="https://instagram.com/a1_sob" target="_blank">
-                <button class="btn insta-btn">اكتبي لي رسالة 💌</button>
+            <a href="https://instagram.com/h.m_b1" target="_blank">
+                <button class="btn insta-btn">عايديني بكشختك😉</button>
             </a>
         </div>
     </div>
 
-<script>
-/* ★ إعداد الموسيقى */
-const bgMusic = document.getElementById("bgMusic");
-bgMusic.load();
+    <script>
+        try {
+            const bgMusic = document.getElementById("bgMusic");
 
-/* ★ النجوم */
-const starsArea = document.getElementById("starsArea");
-for (let i=0; i<45; i++) {
-    let star = document.createElement("div");
-    star.className = "star";
-    let size = Math.random()*3+"px";
-    star.style.width = size;
-    star.style.height = size;
-    star.style.left = Math.random()*100+"vw";
-    star.style.top = Math.random()*100+"vh";
-    star.style.animationDuration = (Math.random()*3+2)+"s";
-    starsArea.appendChild(star);
-}
+            const starsArea = document.getElementById("starsArea");
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 45; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                let size = Math.random() * 3 + "px";
+                star.style.width = size;
+                star.style.height = size;
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                fragment.appendChild(star);
+            }
+            starsArea.appendChild(fragment);
 
-/* ★ القلوب */
-function createHeart() {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤";
-    heart.style.left = Math.random()*100+"vw";
-    heart.style.fontSize = (Math.random()*20+15)+"px";
-    heart.style.animationDuration = (Math.random()*3+5)+"s";
-    document.getElementById("heartsArea").appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-}
-setInterval(createHeart, 1100);
+            function createHeart() {
+                try {
+                    let heart = document.createElement("div");
+                    heart.className = "heart";
+                    heart.textContent = "❤";
+                    heart.style.left = Math.random() * 100 + "vw";
+                    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+                    heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
+                    document.getElementById("heartsArea").appendChild(heart);
+                    setTimeout(() => heart.remove(), 6000);
+                } catch(e) {}
+            }
+            setInterval(createHeart, 1100);
 
-/* ★ زر الضغط المطول */
-const holdBtn = document.getElementById("holdBtn");
-const btnFill = document.getElementById("btnFill");
+            const holdBtn = document.getElementById("holdBtn");
+            const btnFill = document.getElementById("btnFill");
+            let pressing = false;
+            let pressTimer;
 
-let pressing = false;
-let pressTimer;
+            function startPress(e) {
+                if(e.cancelable) e.preventDefault(); 
+                pressing = true;
+                btnFill.style.transition = "width 3s linear";
+                btnFill.style.width = "100%";
+                
+                bgMusic.play().catch(()=>{});
+                
+                pressTimer = setTimeout(() => {
+                    if (pressing) unlockHeart();
+                }, 3000);
+            }
 
-function startPress(e) {
-    e.preventDefault();
-    pressing = true;
-    btnFill.style.transition = "width 3s linear";
-    btnFill.style.width = "100%";
+            function stopPress() {
+                pressing = false;
+                clearTimeout(pressTimer);
+                btnFill.style.transition = "width 0.2s";
+                btnFill.style.width = "0%";
+            }
 
-    bgMusic.play().catch(()=>{});
+            holdBtn.addEventListener("mousedown", startPress);
+            holdBtn.addEventListener("mouseup", stopPress);
+            holdBtn.addEventListener("mouseleave", stopPress);
+            holdBtn.addEventListener("touchstart", startPress, {passive: false});
+            holdBtn.addEventListener("touchend", stopPress);
+            holdBtn.addEventListener("touchcancel", stopPress);
 
-    pressTimer = setTimeout(() => {
-        if (pressing) unlockHeart();
-    }, 3000);
-}
+            function unlockHeart() {
+                if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+                document.getElementById("introScreen").classList.add("hidden");
+                document.getElementById("storyScreen").classList.remove("hidden");
+                playStory();
+            }
 
-function stopPress() {
-    pressing = false;
-    clearTimeout(pressTimer);
-    btnFill.style.transition = "width 0.2s";
-    btnFill.style.width = "0%";
-}
+            /* ★ نصوص القصة - تم تحويلها للعيد بالكامل ★ */
+            const storyLines = [
+                { text: "يا هلا بـ سوسو.. كل عام وأنتي عيدي وأجمل أشيائي.", btn: "وأنت بخير يا عيدي 🤍" },
+                { text: "العيد بدونك ناقص، بس بقلبي أنتي دايماً معي وحولي.", btn: "يا عمري أنت ✨" },
+                { text: "أدري المسافة تتعب.. بس عيدي الحقيقي يوم أشوفك وأكون معك.", btn: "وأنت تسوى دنيتي 🥺" },
+                { text: "أنتي مو بس حبيبتي.. أنتي فرحة أعيادي، وملاذي، وأجمل عطايا ربي لي.", btn: "يا حظي فيك 💖" },
+                { text: "تخيلتك كاشخة للعيد.. ضحكتك تنور العيد وحياتي كلها.", btn: "إن شاء الله أعيادي كلها معك 💍" },
+                { text: "كل عام وأنا أحبك أكثر.. وكل عام وأنتي أعظم انتصاراتي.", btn: "أحبك يا حميد 🫂" },
+                { text: "أوعدك بيجي العيد اللي أمسك فيه يدك.. وما أتركها.", btn: "أمين يا رب 🤍" },
+                { text: "حميد وسوسو.. وكل عام وحبنا يكبر 💖", btn: "للأبد يا روحي 🥰" }
+            ];
 
-holdBtn.addEventListener("mousedown", startPress);
-holdBtn.addEventListener("mouseup", stopPress);
-holdBtn.addEventListener("mouseleave", stopPress);
-holdBtn.addEventListener("touchstart", startPress, {passive:false});
-holdBtn.addEventListener("touchend", stopPress);
+            let currentLine = 0;
+            const storyTextEl = document.getElementById("storyText");
+            const buttonsArea = document.getElementById("buttonsArea");
 
-/* ★ فتح القصة */
-function unlockHeart() {
-    if (navigator.vibrate) navigator.vibrate(120);
+            function typeWriter(text, i, complete) {
+                if (i < text.length) {
+                    storyTextEl.textContent += text.charAt(i);
+                    setTimeout(() => typeWriter(text, i + 1, complete), 45);
+                } else {
+                    complete();
+                }
+            }
 
-    document.getElementById("introScreen").classList.add("hidden");
-    document.getElementById("storyScreen").classList.remove("hidden");
-    playStory();
-}
+            function playStory() {
+                if (currentLine >= storyLines.length) return showFinale();
+                
+                storyTextEl.textContent = "";
+                buttonsArea.innerHTML = "";
+                storyTextEl.classList.add("typing-cursor");
+                
+                let line = storyLines[currentLine];
+                
+                typeWriter(line.text, 0, () => {
+                    storyTextEl.classList.remove("typing-cursor");
+                    let btn = document.createElement("button");
+                    btn.className = "btn";
+                    btn.textContent = line.btn;
+                    
+                    btn.onclick = () => {
+                        bgMusic.play().catch(()=>{});
+                        currentLine++;
+                        playStory();
+                    };
+                    buttonsArea.appendChild(btn);
+                });
+            }
 
-/* ★ نصوص القصة */
-const storyLines = [
-    { text: "يا هلا بـ عسولتي اللي مسافتها عن عيني بعيدة.. بس عن قلبي ولا سانتي.", btn: "أسمعك يا قلبي 🤍" },
-    { text: "تدرين إني إذا طالعت بالسماء بالليل.. أتذكر إننا تحت نفس السماء، وهذا يطمني.", btn: "يا عمري أنت ✨" },
-    { text: "أدري البعد يتعب.. بس والله إنك تسوين هالكون كله وما فيه، وتستاهلين كل لحظة صبر.", btn: "وأنت تسوى دنيتي 🥺" },
-    { text: "أنتي مو بس حبيبتي.. أنتي عائلتي، وملاذي، وأجمل عطايا ربي لي.", btn: "يا حظي فيك 💖" },
-    { text: "تخيلتك بفستانك الأبيض.. ضحكتك تنور حياتي كلها.", btn: "إن شاء الله يجي هاليوم 💍" },
-    { text: "مهما اختلفنا.. مستحيل يمر يوم بدون ما أقول إنك أعظم انتصاراتي.", btn: "أحبك يا عبدالله 🫂" },
-    { text: "أوعدك بيجي اليوم اللي أمسك فيه يدك.. وما أتركها.", btn: "أمين يا رب 🤍" },
-    { text: "عبدالله ورغد.. للأبد 💖", btn: "للأبد يا روحي 🥰" }
-];
+            function showFinale() {
+                document.getElementById("storyScreen").classList.add("hidden");
+                document.getElementById("finaleScreen").classList.remove("hidden");
+                startCountdown();
+            }
 
-let currentLine = 0;
-const storyTextEl = document.getElementById("storyText");
-const buttonsArea = document.getElementById("buttonsArea");
+            /* ★ الأسباب تم تعديلها لتناسب أجواء العيد ★ */
+            const reasons = [
+                "لأن ضحكتك هي العيد الحقيقي لقلبي.",
+                "عشانك تسوين الكون وكل أفراحه.",
+                "شوفتك هي عديتي اللي أتمناها.",
+                "لأنك الفرحة اللي أستناها كل يوم مو بس بالعيد.",
+                "وجودك يخلي كل أيامي أعياد.",
+                "صوتك يرجّع لي روحي ويحسسني بالعيد.",
+                "حنانك والله ما لقيته عند أحد.",
+                "لأنك النور اللي أضاء حياتي وأيامي."
+            ];
 
-function typeWriter(text, i, complete) {
-    if (i < text.length) {
-        storyTextEl.innerHTML += text.charAt(i);
-        setTimeout(() => typeWriter(text, i+1, complete), 45);
-    } else complete();
-}
+            window.generateReason = function() {
+                const box = document.getElementById("reasonText");
+                box.style.opacity = 0;
+                setTimeout(() => {
+                    box.textContent = '"' + reasons[Math.floor(Math.random() * reasons.length)] + '"';
+                    box.style.opacity = 1;
+                }, 200);
+            }
 
-function playStory() {
-    if (currentLine >= storyLines.length) return showFinale();
+            function startCountdown() {
+                // يمكنك تغيير التاريخ هنا إذا كان لديهم تاريخ مميز آخر.
+                const target = new Date(2026, 10, 1, 0, 0, 0).getTime();
+                const timerEl = document.getElementById("timer");
+                let intervalId;
 
-    storyTextEl.innerHTML = "";
-    buttonsArea.innerHTML = "";
-    storyTextEl.classList.add("typing-cursor");
+                function update() {
+                    let now = Date.now();
+                    let diff = target - now;
 
-    let line = storyLines[currentLine];
+                    if (diff <= 0) {
+                        timerEl.textContent = "جاء اليوم المنتظر! 💖";
+                        clearInterval(intervalId);
+                        return;
+                    }
 
-    typeWriter(line.text, 0, () => {
-        storyTextEl.classList.remove("typing-cursor");
-        
-        let btn = document.createElement("button");
-        btn.className = "btn";
-        btn.innerText = line.btn;
+                    let d = Math.floor(diff / (1000*60*60*24));
+                    let h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                    let m = Math.floor((diff % (1000*60*60)) / (1000*60));
+                    let s = Math.floor((diff % (1000*60)) / 1000);
 
-        btn.onclick = () => {
-            bgMusic.play().catch(()=>{});
-            currentLine++;
-            playStory();
-        };
+                    timerEl.textContent = `${d} يوم | ${h} س | ${m} د | ${s} ث`;
+                }
 
-        buttonsArea.appendChild(btn);
-    });
-}
+                update();
+                intervalId = setInterval(update, 1000);
+            }
 
-/* ★ شاشة النهاية */
-function showFinale() {
-    document.getElementById("storyScreen").classList.add("hidden");
-    document.getElementById("finaleScreen").classList.remove("hidden");
-    startCountdown();
-}
-
-/* ★ ليش أحبك؟ */
-const reasons = [
-    "ضحكتك تشيل الهم من قلبي.",
-    "عشانك تسوين الكون كله وما فيه.",
-    "عيونك لها مكان خاص بقلبي.",
-    "حنانك والله ما لقيته عند أحد.",
-    "تفهميني من دون ما أتكلم.",
-    "صوتك يرجّع لي روحي.",
-    "وجودك أمان وسط هالعالم.",
-    "أحب تفاصيلك الصغيرة قبل الكبيرة.",
-    "أنتي النور اللي أضاء حياتي.",
-];
-
-function generateReason() {
-    const box = document.getElementById("reasonText");
-    box.style.opacity = 0;
-    setTimeout(() => {
-        box.innerText = '"' + reasons[Math.floor(Math.random()*reasons.length)] + '"';
-        box.style.opacity = 1;
-    }, 200);
-}
-
-/* ★ العدّاد */
-function startCountdown() {
-    const target = new Date(2026, 7, 23, 0, 0, 0).getTime();
-    const timerEl = document.getElementById("timer");
-
-    function update() {
-        let now = Date.now();
-        let diff = target - now;
-
-        if (diff <= 0) {
-            timerEl.innerHTML = "جاء اليوم المنتظر! 💖";
-            return;
-        }
-
-        let d = Math.floor(diff / (1000*60*60*24));
-        let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-        let m = Math.floor((diff%(1000*60*60))/(1000*60));
-        let s = Math.floor((diff%(1000*60))/1000);
-
-        timerEl.innerHTML = `${d} يوم | ${h} س | ${m} د | ${s} ث`;
-    }
-    update();
-    setInterval(update, 1000);
-}
-</script>
-
+        } catch (error) {}
+    </script>
 </body>
 </html>
 
