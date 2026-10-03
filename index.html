@@ -1,158 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#01000a">
-    <meta property="og:title" content="عيدية دنيتي سوسو 💖">
-    <meta property="og:description" content="افتحي الرابط وشوفي عيديتك.. ✨">
-    <meta property="og:type" content="website">
-    <title>عيدية دنيتي سوسو 💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Tajawal',sans-serif; user-select:none; -webkit-tap-highlight-color:transparent; }
-        body { background: linear-gradient(to bottom, #01000a, #13132b); height:100vh; overflow:hidden; display:flex; justify-content:center; align-items:center; color:white; }
-        .stars { position:absolute; width:100%; height:100%; pointer-events:none; z-index: 0; }
-        .star { position:absolute; background:white; border-radius:50%; animation: twinkle infinite alternate; }
-        @keyframes twinkle { 0% { opacity:0.1; transform:scale(0.7); } 100% { opacity:0.9; transform:scale(1.2); box-shadow:0 0 6px #fff; } }
-        .heart { position:absolute; bottom:-50px; color:#ff6eb4; animation: floatUp linear forwards; opacity:0; z-index: 1; }
-        @keyframes floatUp { 0% { transform:translateY(0) scale(0.5); opacity:0; } 30% { opacity:1; } 100% { transform:translateY(-120vh) scale(1.2); opacity:0; } }
-        .container { z-index:5; width:90%; max-width:450px; text-align:center; transition:0.5s; }
-        .hold-btn-container { width:220px; height:60px; margin:20px auto; border-radius:30px; overflow:hidden; cursor:pointer; background:rgba(255,255,255,0.05); border:2px solid #ffb6c1; position:relative; transition:0.3s; touch-action: none; -webkit-touch-callout: none; }
-        .hold-btn-container:active { transform:scale(0.97); }
-        .hold-btn-fill { position:absolute; top:0; right:0; height:100%; width:0%; background:linear-gradient(45deg,#ff6eb4,#ffb6c1); transition:width 0.1s linear; z-index:1; }
-        .hold-btn-text { position:absolute; top:0; left:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; z-index:2; color:#fff; font-weight:bold; font-size:1.1rem; text-shadow:0 0 10px rgba(0,0,0,0.5); }
-        .story-text { font-size:1.5rem; color:#ffb6c1; line-height:1.8; min-height:120px; margin-bottom:30px; text-shadow:0 0 10px rgba(255,182,193,0.3); transition:opacity 0.5s; }
-        .typing-cursor::after { content:"|"; animation:blink 1s infinite; }
-        @keyframes blink { 50% { opacity:0; } }
-        .btn { background:rgba(255,255,255,0.05); border:1px solid #ffb6c1; color:white; padding:12px 35px; border-radius:50px; font-size:1.2rem; cursor:pointer; transition:0.25s; margin:10px; position:relative; overflow:hidden; }
-        .btn:active { transform:scale(0.95); }
-        .btn:active::after { content:""; position:absolute; width:200px; height:200px; background:rgba(255,255,255,0.25); border-radius:50%; left:50%; top:50%; transform:translate(-50%,-50%) scale(0); animation:ripple 0.4s linear forwards; }
-        @keyframes ripple { to { transform:translate(-50%,-50%) scale(2); opacity:0; } }
-        .final-initials { font-size:4rem; color:#ff6eb4; letter-spacing:5px; text-transform:lowercase; margin-bottom:30px; animation:slowPulse 3s infinite; text-shadow:0 0 15px #ff6eb4; }
-        @keyframes slowPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.05); } }
-        .countdown-box { background:rgba(0,0,0,0.4); border-radius:15px; padding:15px; margin-top:20px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 15px rgba(0,0,0,0.5); }
-        .cd-title { color:#ffb6c1; font-size:1rem; margin-bottom:10px; }
-        .cd-timer { font-size:1.4rem; font-weight:bold; letter-spacing: 1px; }
-        .reason-box { margin-top:20px; min-height:80px; color:#fff9c4; font-size:1.2rem; font-style:italic; opacity:0; transition:0.5s; text-shadow:0 0 8px #ffeb3b; }
-        .insta-btn { border-color:#e1306c; color:#ffb6c1; }
-        .hidden { display:none !important; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#08030f">
+<meta property="og:title" content="عيدية دنيتي سوسو ✨">
+<meta property="og:description" content="رسالة صغيرة من قلب كبير…">
+<title>عيدية دنيتي سوسو ✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07030d;--bg2:#150920;--p:#ff8fb7;--p2:#ffd2e1;--v:#9d87ff;--g:#f4d68c;--muted:#afa2b2;--glass:rgba(255,255,255,.075);--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Cairo,sans-serif;color:#fff;background:radial-gradient(circle at 50% 8%,#2a123c 0,var(--bg2) 38%,var(--bg) 100%)}
+button{font:inherit}button{cursor:pointer}.scene{position:relative;width:100%;height:100%;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(65px);pointer-events:none}.o1{width:55vw;height:55vw;right:-14vw;top:-18vw;background:rgba(157,135,255,.14);animation:drift 10s ease-in-out infinite alternate}.o2{width:42vw;height:42vw;left:-20vw;bottom:-14vw;background:rgba(255,143,183,.1);animation:drift2 14s ease-in-out infinite alternate}@keyframes drift{to{transform:translate(-3vw,5vh)}}@keyframes drift2{to{transform:translate(5vw,-4vh)}}
+.stars{position:absolute;inset:0;pointer-events:none}.star{position:absolute;background:#fff;border-radius:50%;opacity:.35;animation:blink 2.5s ease-in-out infinite alternate}@keyframes blink{to{opacity:1;transform:scale(1.6);box-shadow:0 0 9px #fff}}
+.moon{position:absolute;top:8vh;left:8vw;width:72px;height:72px;border-radius:50%;box-shadow:18px -9px 0 #fff1d4;transform:rotate(-18deg);opacity:.88}.moon:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#fff1d4;left:30px;top:20px;box-shadow:21px 20px 0 2px #fff1d4}
+.top{position:absolute;z-index:20;top:16px;left:16px;right:16px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:.78rem;color:var(--muted)}.music{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:#fff;backdrop-filter:blur(15px)}.music.on{box-shadow:0 0 0 4px rgba(255,143,183,.07),0 0 25px rgba(255,143,183,.3)}
+.pages{position:absolute;inset:0;z-index:10}.page{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:75px 20px 25px;opacity:0;transform:translateY(24px) scale(.985);pointer-events:none;transition:.6s ease}.page.active{opacity:1;transform:none;pointer-events:auto}
+.card{width:min(92vw,520px);padding:32px 24px;border-radius:32px;text-align:center;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid var(--line);backdrop-filter:blur(22px);box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.kicker{font-size:.76rem;color:var(--p2);margin-bottom:10px}.hero{font-family:Amiri,serif;font-size:clamp(2.7rem,9vw,4.5rem);line-height:1.08;margin:0 0 10px}.hero span{color:var(--p)}.sub{font-size:1rem;line-height:1.9;color:var(--muted);max-width:430px;margin:auto}.line{width:95px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,var(--p),transparent)}
+.heart{width:116px;height:116px;margin:0 auto 21px;border-radius:50%;display:grid;place-items:center;font-size:3rem;background:radial-gradient(circle at 30% 25%,#ffe3ed,#ff8fb7 42%,#917bff);box-shadow:0 0 0 10px rgba(255,255,255,.025),0 0 60px rgba(255,143,183,.24);animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-8px) rotate(2deg)}}
+.hold{height:64px;max-width:360px;margin:25px auto 10px;border-radius:18px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);overflow:hidden;position:relative;touch-action:none}.fill{position:absolute;inset:0 0 0 auto;width:0;background:linear-gradient(90deg,var(--v),var(--p));transition:width .08s}.hold span{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center;font-weight:800}.help{font-size:.74rem;color:#827887}
+.count{font-size:.74rem;color:#887d8d;margin-bottom:10px}.story{font-size:clamp(1.45rem,5vw,2rem);font-weight:700;line-height:1.9;min-height:155px;display:flex;align-items:center;justify-content:center}.story em{font-style:normal;color:var(--p2)}
+.dots{display:flex;justify-content:center;gap:6px;margin:8px 0 19px}.dot{width:6px;height:6px;border-radius:10px;background:#594e61;transition:.2s}.dot.active{width:24px;background:linear-gradient(90deg,var(--v),var(--p))}
+.btn{min-width:185px;padding:13px 20px;border-radius:16px;border:0;background:linear-gradient(135deg,#ff9bbb,#a88dff);color:#1b0a19;font-weight:800;box-shadow:0 10px 28px rgba(255,143,183,.17)}.btn:active{transform:scale(.97)}.btn.alt{background:rgba(255,255,255,.055);border:1px solid var(--line);color:#fff;box-shadow:none;margin-top:10px}
+.gift{font-size:4.2rem;margin-bottom:4px;filter:drop-shadow(0 0 20px rgba(244,214,140,.16))}.final{font-family:Amiri,serif;font-size:clamp(2.25rem,8vw,3.5rem);margin:0}.sig{color:var(--p2);margin:0 0 18px}.reason{min-height:86px;padding:16px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.12);border-radius:20px;display:flex;align-items:center;justify-content:center;line-height:1.9;margin:16px 0;transition:.25s}.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:17px 0 19px}.unit{padding:10px 4px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}.num{font-weight:800;font-size:1.2rem}.lbl{font-size:.65rem;color:#9c919f}.foot{font-size:.7rem;color:#716877;margin-top:14px}
+.petal{position:absolute;top:-25px;color:var(--p2);opacity:0;animation:fall linear forwards}@keyframes fall{0%{transform:translateY(-30px) rotate(0);opacity:0}12%{opacity:.6}100%{transform:translate(var(--d),110vh) rotate(420deg);opacity:0}}
+.toast{position:fixed;z-index:40;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;padding:10px 15px;border-radius:14px;background:rgba(14,8,20,.9);border:1px solid var(--line);font-size:.78rem;transition:.25s;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:420px){.card{padding:28px 17px;border-radius:28px}.moon{width:58px;height:58px;top:9vh}.story{min-height:175px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-    <audio id="bgMusic" loop preload="auto"><source src="blue.mp3" type="audio/mpeg"></audio>
-    <div class="stars" id="starsArea"></div>
-    <div id="heartsArea"></div>
-    <div class="container">
-        <div id="introScreen">
-            <div style="font-size:60px;">🌙</div>
-            <h2 style="color:#ffb6c1; margin:20px 0;">جاهزة لعيديتك يا سوسو؟ ✨</h2>
-            <div class="hold-btn-container" id="holdBtn" oncontextmenu="return false;">
-                <div class="hold-btn-fill" id="btnFill"></div>
-                <div class="hold-btn-text">اضغطي مطولًا لفتح هديتك</div>
-            </div>
-            <p style="color:#aaa; font-size:0.9rem;">(استمري ٣ ثواني)</p>
-        </div>
-        <div id="storyScreen" class="hidden">
-            <div id="storyText" class="story-text typing-cursor"></div>
-            <div id="buttonsArea"></div>
-        </div>
-        <div id="finaleScreen" class="hidden">
-            <div class="final-initials">H & S</div>
-            <button class="btn" id="reasonBtn" onclick="generateReason()">ليش أنتي عيدي؟ 🤍</button>
-            <div class="reason-box" id="reasonText"></div>
-            <div class="countdown-box">
-                <div class="cd-title">بانتظار فرحتنا الكبيرة اللي بتكمل أعيادنا (1 أكتوبر):</div>
-                <div class="cd-timer" id="timer">يتم الحساب...</div>
-            </div>
-            <a href="https://instagram.com/h.m_b1" target="_blank"><button class="btn insta-btn">عايديني بكشختك😉</button></a>
-        </div>
-    </div>
-    <script>
-        try {
-            const bgMusic = document.getElementById("bgMusic");
-            const starsArea = document.getElementById("starsArea");
-            const fragment = document.createDocumentFragment();
-            for (let i = 0; i < 45; i++) {
-                let star = document.createElement("div");
-                star.className = "star";
-                let size = Math.random() * 3 + "px";
-                star.style.width = size; star.style.height = size;
-                star.style.left = Math.random() * 100 + "vw"; star.style.top = Math.random() * 100 + "vh";
-                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
-                fragment.appendChild(star);
-            }
-            starsArea.appendChild(fragment);
-            function createHeart() {
-                try {
-                    let heart = document.createElement("div"); heart.className = "heart"; heart.textContent = "❤";
-                    heart.style.left = Math.random() * 100 + "vw"; heart.style.fontSize = (Math.random() * 20 + 15) + "px";
-                    heart.style.animationDuration = (Math.random() * 3 + 5) + "s";
-                    document.getElementById("heartsArea").appendChild(heart); setTimeout(() => heart.remove(), 6000);
-                } catch(e) {}
-            }
-            setInterval(createHeart, 1100);
-            const holdBtn = document.getElementById("holdBtn"); const btnFill = document.getElementById("btnFill");
-            let pressing = false; let pressTimer;
-            function startPress(e) {
-                if(e.cancelable) e.preventDefault(); pressing = true;
-                btnFill.style.transition = "width 3s linear"; btnFill.style.width = "100%";
-                bgMusic.play().catch(()=>{});
-                pressTimer = setTimeout(() => { if (pressing) unlockHeart(); }, 3000);
-            }
-            function stopPress() { pressing = false; clearTimeout(pressTimer); btnFill.style.transition = "width 0.2s"; btnFill.style.width = "0%"; }
-            holdBtn.addEventListener("mousedown", startPress); holdBtn.addEventListener("mouseup", stopPress); holdBtn.addEventListener("mouseleave", stopPress);
-            holdBtn.addEventListener("touchstart", startPress, {passive: false}); holdBtn.addEventListener("touchend", stopPress); holdBtn.addEventListener("touchcancel", stopPress);
-            function unlockHeart() {
-                if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-                document.getElementById("introScreen").classList.add("hidden"); document.getElementById("storyScreen").classList.remove("hidden"); playStory();
-            }
-            const storyLines = [
-                { text: "يا هلا بـ سوسو.. كل عام وأنتي عيدي وأجمل أشيائي.", btn: "وأنت بخير يا عيدي 🤍" },
-                { text: "العيد بدونك ناقص، بس بقلبي أنتي دايماً معي وحولي.", btn: "يا عمري أنت ✨" },
-                { text: "أدري المسافة تتعب.. بس عيدي الحقيقي يوم أشوفك وأكون معك.", btn: "وأنت تسوى دنيتي 🥺" },
-                { text: "أنتي مو بس حبيبتي.. أنتي فرحة أعيادي، وملاذي، وأجمل عطايا ربي لي.", btn: "يا حظي فيك 💖" },
-                { text: "تخيلتك كاشخة للعيد.. ضحكتك تنور العيد وحياتي كلها.", btn: "إن شاء الله أعيادي كلها معك 💍" },
-                { text: "كل عام وأنا أحبك أكثر.. وكل عام وأنتي أعظم انتصاراتي.", btn: "أحبك يا حميد 🫂" },
-                { text: "أوعدك بيجي العيد اللي أمسك فيه يدك.. وما أتركها.", btn: "أمين يا رب 🤍" },
-                { text: "حميد وسوسو.. وكل عام وحبنا يكبر 💖", btn: "للأبد يا روحي 🥰" }
-            ];
-            let currentLine = 0; const storyTextEl = document.getElementById("storyText"); const buttonsArea = document.getElementById("buttonsArea");
-            function typeWriter(text, i, complete) {
-                if (i < text.length) { storyTextEl.textContent += text.charAt(i); setTimeout(() => typeWriter(text, i + 1, complete), 45); } else complete();
-            }
-            function playStory() {
-                if (currentLine >= storyLines.length) return showFinale();
-                storyTextEl.textContent = ""; buttonsArea.innerHTML = ""; storyTextEl.classList.add("typing-cursor");
-                let line = storyLines[currentLine];
-                typeWriter(line.text, 0, () => {
-                    storyTextEl.classList.remove("typing-cursor");
-                    let btn = document.createElement("button"); btn.className = "btn"; btn.textContent = line.btn;
-                    btn.onclick = () => { bgMusic.play().catch(()=>{}); currentLine++; playStory(); };
-                    buttonsArea.appendChild(btn);
-                });
-            }
-            function showFinale() { document.getElementById("storyScreen").classList.add("hidden"); document.getElementById("finaleScreen").classList.remove("hidden"); startCountdown(); }
-            const reasons = [
-                "لأن ضحكتك هي العيد الحقيقي لقلبي.","عشانك تسوين الكون وكل أفراحه.","شوفتك هي عديتي اللي أتمناها.","لأنك الفرحة اللي أستناها كل يوم مو بس بالعيد.",
-                "وجودك يخلي كل أيامي أعياد.","صوتك يرجّع لي روحي ويحسسني بالعيد.","حنانك والله ما لقيته عند أحد.","لأنك النور اللي أضاء حياتي وأيامي."
-            ];
-            window.generateReason = function() {
-                const box = document.getElementById("reasonText"); box.style.opacity = 0;
-                setTimeout(() => { box.textContent = '"' + reasons[Math.floor(Math.random() * reasons.length)] + '"'; box.style.opacity = 1; }, 200);
-            }
-            function startCountdown() {
-                const target = new Date(2026, 10, 1, 0, 0, 0).getTime(); const timerEl = document.getElementById("timer"); let intervalId;
-                function update() {
-                    let now = Date.now(); let diff = target - now;
-                    if (diff <= 0) { timerEl.textContent = "جاء اليوم المنتظر! 💖"; clearInterval(intervalId); return; }
-                    let d = Math.floor(diff / (1000*60*60*24)); let h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-                    let m = Math.floor((diff % (1000*60*60)) / (1000*60)); let s = Math.floor((diff % (1000*60)) / 1000);
-                    timerEl.textContent = `${d} يوم | ${h} س | ${m} د | ${s} ث`;
-                }
-                update(); intervalId = setInterval(update, 1000);
-            }
-        } catch (error) {}
-    </script>
+<div class="scene">
+<div class="orb o1"></div><div class="orb o2"></div><div class="moon"></div><div class="stars" id="stars"></div><div id="particles"></div>
+<div class="top"><div class="brand">عيدية صغيرة • حب كبير</div><button class="music" id="musicBtn" aria-label="الموسيقى">♫</button></div>
+<audio id="music" loop preload="auto"><source src="blue.mp3" type="audio/mpeg"></audio>
+
+<div class="pages">
+<section class="page active" id="p0"><div class="card">
+<div class="kicker">إلى سوسو، بكل الحب 🤍</div>
+<h1 class="hero">جاهزة لعيديتك<br><span>يا سوسو؟</span></h1>
+<p class="sub">هالمرة ما فيه زر فتح عادي… فيه لحظة لازم تعيشينها شوي شوي.</p>
+<div class="line"></div><div class="heart">🌙</div>
+<div class="hold" id="hold"><div class="fill" id="fill"></div><span>اضغطي مطولًا لفتح العيدية</span></div>
+<div class="help">استمري تقريبًا 3 ثواني… وخلي الباقي عليّ ✨</div>
+</div></section>
+
+<section class="page" id="p1"><div class="card">
+<div class="kicker">رسائل ما تنقال كلها مرة وحدة</div><div class="count" id="count">01 / 08</div>
+<div class="story" id="story"></div><div class="dots" id="dots"></div>
+<button class="btn" id="next">كمّلي 🤍</button>
+</div></section>
+
+<section class="page" id="p2"><div class="card">
+<div class="kicker">وصلنا للنهاية… بس مو لنهاية الكلام</div><div class="gift">🎁</div>
+<h2 class="final">عيديتي الحقيقية؟</h2><p class="sig">إنك تكونين بخير… وقريبة… وتبتسمين.</p>
+<div class="reason" id="reason">اضغطي الزر وخلي العيد يختار لكِ سببًا جديدًا كل مرة 🤍</div>
+<button class="btn" id="why">ليش أنتي عيدي؟ ✨</button>
+<div class="cd">
+<div class="unit"><div class="num" id="d">—</div><div class="lbl">يوم</div></div>
+<div class="unit"><div class="num" id="h">—</div><div class="lbl">ساعة</div></div>
+<div class="unit"><div class="num" id="m">—</div><div class="lbl">دقيقة</div></div>
+<div class="unit"><div class="num" id="s">—</div><div class="lbl">ثانية</div></div>
+</div>
+<button class="btn alt" id="restart">أعيدي اللحظة من البداية ↺</button>
+<div class="foot">حميد × سوسو — وكل عام والحب يكبر.</div>
+</div></section>
+</div>
+<div class="toast" id="toast"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id),music=$('music'),toast=$('toast');
+for(let i=0;i<58;i++){const e=document.createElement('i');e.className='star';const z=Math.random()*3+1;e.style.width=e.style.height=z+'px';e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';e.style.animationDelay=Math.random()*3+'s';$('stars').appendChild(e)}
+setInterval(()=>{const e=document.createElement('span');e.className='petal';e.textContent=['✦','·','♡','✧'][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+'%';e.style.setProperty('--d',(Math.random()*150-75)+'px');e.style.animationDuration=5+Math.random()*5+'s';$('particles').appendChild(e);setTimeout(()=>e.remove(),11000)},700);
+function toastMsg(t){toast.textContent=t;toast.classList.add('show');clearTimeout(toastMsg.t);toastMsg.t=setTimeout(()=>toast.classList.remove('show'),2200)}
+async function play(){try{await music.play();$('musicBtn').classList.add('on')}catch(e){toastMsg('اضغطي ♫ لتشغيل الموسيقى 🎵')}}
+$('musicBtn').onclick=()=>music.paused?play():(music.pause(),$('musicBtn').classList.remove('on'));
+
+function page(n){document.querySelectorAll('.page').forEach((x,i)=>x.classList.toggle('active',i===n))}
+const hold=$('hold'),fill=$('fill');let down=false,start=0,raf=0,opened=false;const HOLD=3000;
+function begin(e){e.preventDefault();if(opened)return;down=true;start=performance.now();play();const run=now=>{if(!down)return;const p=Math.min((now-start)/HOLD,1);fill.style.width=p*100+'%';if(p>=1){opened=true;down=false;navigator.vibrate?.([70,40,120]);page(1);initStory();return}raf=requestAnimationFrame(run)};raf=requestAnimationFrame(run)}
+function end(){if(opened)return;down=false;cancelAnimationFrame(raf);fill.style.width='0%'}
+['mousedown','touchstart'].forEach(e=>hold.addEventListener(e,begin,{passive:false}));['mouseup','mouseleave','touchend','touchcancel'].forEach(e=>hold.addEventListener(e,end,{passive:false}));
+
+const lines=[
+'يا هلا بـ <em>سوسو</em>… كل عام وأنتِ عيدي وأجمل أشيائي.',
+'العيد بدونك ناقص، لكن بقلبي أنتِ دائمًا معي وحولي.',
+'أدري المسافة تتعب… بس العيد الحقيقي يوم أشوفك وأكون معك.',
+'أنتِ مو بس حبيبتي… أنتِ فرحة أعيادي وأجمل عطايا ربي لي.',
+'تخيلتك كاشخة للعيد… ضحكتك تنوّر العيد وحياتي كلها.',
+'كل عام وأنا أحبك أكثر… وكل عام وأنتِ من أحب الأشياء لقلبي.',
+'أوعدك يجي العيد اللي أمسك فيه يدك… وما أتركها.',
+'حميد وسوسو… وكل عام وحبنا يكبر 🤍'
+];
+const replies=['وأنت بخير يا عيدي 🤍','يا عمري أنت ✨','وأنت تسوى دنيتي 🥺','يا حظي فيك 💖','إن شاء الله أعيادنا كلها مع بعض 💍','أحبك يا حميد 🫂','آمين يا رب 🤍','للأبد يا روحي 🥰'];
+let i=0,typing;
+function initStory(){i=0;$('dots').innerHTML='';lines.forEach((_,n)=>{const d=document.createElement('span');d.className='dot'+(!n?' active':'');$('dots').appendChild(d)});draw()}
+function draw(){clearInterval(typing);$('count').textContent=String(i+1).padStart(2,'0')+' / 08';$('next').textContent=replies[i];[...$('dots').children].forEach((d,n)=>d.classList.toggle('active',n===i));$('story').textContent='';const plain=document.createElement('div');plain.innerHTML=lines[i];const txt=plain.textContent;let n=0;typing=setInterval(()=>{if(n<txt.length)$('story').textContent=txt.slice(0,++n);else{clearInterval(typing);$('story').innerHTML=lines[i]}},28)}
+$('next').onclick=()=>{play();if(i<lines.length-1){i++;draw();navigator.vibrate?.(25)}else{page(2);countdown()}};
+
+const reasons=['لأن ضحكتك هي العيد الحقيقي لقلبي.','عشانك تسوين الكون وكل أفراحه.','شوفتك هي العيدية اللي أتمناها.','لأنك الفرحة اللي أستناها كل يوم، مو بس بالعيد.','وجودك يخلي كل أيامي أعياد.','صوتك يرجّع لي روحي ويحسسني بالأمان.','حنانك شيء ما لقيته عند أحد.','لأنك النور اللي أضاء حياتي وأيامي.'];
+$('why').onclick=()=>{const b=$('reason');b.style.opacity=0;setTimeout(()=>{b.textContent='“'+reasons[Math.floor(Math.random()*reasons.length)]+'”';b.style.opacity=1},140)};
+
+function countdown(){const target=new Date(2026,10,1,0,0,0).getTime();const tick=()=>{let x=Math.max(0,target-Date.now()),d=Math.floor(x/86400000);x%=86400000;let h=Math.floor(x/3600000);x%=3600000;let m=Math.floor(x/60000);let s=Math.floor((x%60000)/1000);$('d').textContent=d;$('h').textContent=h;$('m').textContent=m;$('s').textContent=s;if(!d&&!h&&!m&&!s)toastMsg('جاء اليوم المنتظر 💖')};tick();clearInterval(countdown.t);countdown.t=setInterval(tick,1000)}
+$('restart').onclick=()=>{opened=false;down=false;fill.style.width='0%';page(0);toastMsg('نرجعها من أول لحظة ✨')}
+</script>
 </body>
 </html>
